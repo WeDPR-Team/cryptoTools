@@ -79,3 +79,22 @@ install(EXPORT cryptoToolsTargets
        FILE "${CMAKE_CURRENT_BINARY_DIR}/cryptoToolsTargets.cmake"
        NAMESPACE oc::
 )
+
+if(ENABLE_MR_KYBER)
+    set(exportLibs "${exportLibs}KyberOT;")
+
+    # install headers
+    install(
+            DIRECTORY ${CMAKE_CURRENT_LIST_DIR}/../KyberOT/
+            DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/KyberOT
+            FILES_MATCHING PATTERN "*.h")
+endif()
+
+if(ENABLE_SIMPLESTOT_ASM)
+    set(exportLibs "${exportLibs}SimplestOT;")
+    # install headers
+    install(
+            DIRECTORY ${CMAKE_CURRENT_LIST_DIR}/../SimplestOT/
+            DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/SimplestOT
+            FILES_MATCHING PATTERN "*.h")
+endif()

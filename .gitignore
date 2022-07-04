@@ -8,6 +8,9 @@
 .vs/
 *.args.json
 
+.idea
+cmake-build-debug
+
 out/*
 CMakeFiles/*
 *Makefile*

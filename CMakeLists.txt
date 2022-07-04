@@ -6,7 +6,7 @@ endif (POLICY CMP0048)
 project(cryptoTools VERSION 1.9.0)
 
 
-
+set(CMAKE_CXX_STANDARD 17)
 
 if("${CMAKE_CURRENT_SOURCE_DIR}" STREQUAL "${CMAKE_SOURCE_DIR}")
 
@@ -64,7 +64,7 @@ option(ENABLE_CIRCUITS  "compile the circuit module" OFF)
 option(ENABLE_NET_LOG   "compile with network logging" OFF)
 option(ENABLE_WOLFSSL   "conpiler with WolfSSL enabled" OFF)
 option(ENABLE_SSE       "compile with SSE instrctions" ON)
-option(ENABLE_BOOST     "compile with BOOST networing integration" ON)
+option(ENABLE_BOOST     "compile with BOOST networing integration" OFF)
 
 
 option(FETCH_AUTO      "automaticly download and build dependancies" OFF)
@@ -121,7 +121,14 @@ include("${CMAKE_CURRENT_LIST_DIR}/cmake/cryptoToolsDepHelper.cmake")
 
 add_subdirectory(cryptoTools)
 add_subdirectory(tests_cryptoTools)
-add_subdirectory(frontend_cryptoTools)
+
+if(ENABLE_MR_KYBER AND (NOT MSVC))
+	add_subdirectory(baseOT_asm/KyberOT)
+endif()
+
+if(ENABLE_SIMPLESTOT_ASM AND (NOT MSVC))
+	add_subdirectory(baseOT_asm/SimplestOT)
+endif()
 
 configure_file(cryptoTools/Common/config.h.in "cryptoTools/Common/config.h" )
 
