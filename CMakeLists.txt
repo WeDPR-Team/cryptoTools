@@ -5,8 +5,11 @@ endif (POLICY CMP0048)
 
 project(cryptoTools VERSION 1.9.0)
 
-
 set(CMAKE_CXX_STANDARD 17)
+add_compile_options(-Wno-unused-command-line-argument)
+add_compile_options(-Wno-newline-eof)
+add_compile_options(-Wno-unused-variable)
+add_compile_options(-Wno-empty-translation-unit)
 
 if("${CMAKE_CURRENT_SOURCE_DIR}" STREQUAL "${CMAKE_SOURCE_DIR}")
 
@@ -60,14 +63,12 @@ endmacro()
 option(ENABLE_SPAN_LITE "use the span-lite library" ON)
 option(ENABLE_RELIC     "use the relic library" OFF)
 option(ENABLE_SODIUM    "use libsodium" OFF)
-option(ENABLE_CIRCUITS  "compile the circuit module" OFF)
+option(ENABLE_CIRCUITS  "compile the circuit module" ON)
 option(ENABLE_NET_LOG   "compile with network logging" OFF)
 option(ENABLE_WOLFSSL   "conpiler with WolfSSL enabled" OFF)
 option(ENABLE_SSE       "compile with SSE instrctions" ON)
 option(ENABLE_BOOST     "compile with BOOST networing integration" OFF)
-
-
-option(FETCH_AUTO      "automaticly download and build dependancies" OFF)
+option(FETCH_AUTO       "automaticly download and build dependancies" OFF)
 
 #option(FETCH_SPAN_LITE		"download and build span" OFF))
 EVAL(FETCH_SPAN_LITE_IMPL 

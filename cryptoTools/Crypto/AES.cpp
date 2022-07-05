@@ -96,11 +96,10 @@ namespace osuCrypto {
         static const uint8_t Rcon[11] = {
             0x8d, 0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x40, 0x80, 0x1b, 0x36 };
 
-        // The number of columns comprising a state in AES. This is a constant in AES. Value=4
-        const u64 Nb = 4;
-        const u64 Nk = 4;        // The number of 32 bit words in a key.
-        const u64 Nr = 10;       // The number of rounds in AES Cipher.
-
+//        // The number of columns comprising a state in AES. This is a constant in AES. Value=4
+//        const u64 Nb = 4;
+//        const u64 Nk = 4;        // The number of 32 bit words in a key.
+//        const u64 Nr = 10;       // The number of rounds in AES Cipher.
 
         template<>
         void AES<Portable>::setKey(const block& userKey)
