@@ -10,6 +10,7 @@ add_compile_options(-Wno-unused-command-line-argument)
 add_compile_options(-Wno-newline-eof)
 add_compile_options(-Wno-unused-variable)
 add_compile_options(-Wno-empty-translation-unit)
+add_compile_options(-Wno-sign-compare)
 
 if("${CMAKE_CURRENT_SOURCE_DIR}" STREQUAL "${CMAKE_SOURCE_DIR}")
 
