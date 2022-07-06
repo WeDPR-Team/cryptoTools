@@ -5,9 +5,9 @@
 #if defined(ENABLE_SODIUM) || defined(ENABLE_RELIC)
 
 #if defined(ENABLE_SODIUM)
-#include "SodiumCurve.h>
+#include <cryptoTools/Crypto/SodiumCurve.h>
 #elif defined(ENABLE_RELIC)
-#include "RCurve.h"
+#include <cryptoTools/Crypto/RCurve.h>
 #endif
 
 namespace osuCrypto
