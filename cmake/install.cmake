@@ -81,8 +81,6 @@ install(EXPORT cryptoToolsTargets
 )
 
 if(ENABLE_MR_KYBER)
-    set(exportLibs "${exportLibs}KyberOT;")
-
     # install headers
     install(
             DIRECTORY ${CMAKE_CURRENT_LIST_DIR}/../KyberOT/
@@ -91,7 +89,6 @@ if(ENABLE_MR_KYBER)
 endif()
 
 if(ENABLE_SIMPLESTOT_ASM)
-    set(exportLibs "${exportLibs}SimplestOT;")
     # install headers
     install(
             DIRECTORY ${CMAKE_CURRENT_LIST_DIR}/../SimplestOT/
