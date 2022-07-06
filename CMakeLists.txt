@@ -126,13 +126,15 @@ include("${CMAKE_CURRENT_LIST_DIR}/cmake/cryptoToolsDepHelper.cmake")
 add_subdirectory(cryptoTools)
 add_subdirectory(tests_cryptoTools)
 
-if(ENABLE_MR_KYBER AND (NOT MSVC))
-	add_subdirectory(baseOT_asm/KyberOT)
-endif()
+if (CMAKE_HOST_SYSTEM_PROCESSOR MATCHES "x86_amd64" AND (NOT MSVC))
+	if(ENABLE_MR_KYBER)
+		add_subdirectory(baseOT_asm/KyberOT)
+	endif()
 
-if(ENABLE_SIMPLESTOT_ASM AND (NOT MSVC))
-	add_subdirectory(baseOT_asm/SimplestOT)
-endif()
+	if(ENABLE_SIMPLESTOT_ASM)
+		add_subdirectory(baseOT_asm/SimplestOT)
+	endif()
+endif ()
 
 configure_file(cryptoTools/Common/config.h.in "cryptoTools/Common/config.h" )
 
