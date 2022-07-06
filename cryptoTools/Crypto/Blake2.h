@@ -86,7 +86,7 @@ namespace osuCrypto {
 		}
 
 		// Copy the interal state of a Blake2 computation.
-		const Blake2& operator=(const Blake2& src);
+        // Blake2& operator=(const Blake2& src);
 
 		// returns the number of bytes that will be written when Final(...) is called.
 		u64 outputLength() const

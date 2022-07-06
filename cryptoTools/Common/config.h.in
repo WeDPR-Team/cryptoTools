@@ -1,5 +1,7 @@
 #pragma once
 
+// use the simplest assembly library
+#cmakedefine ENABLE_SIMPLESTOT_ASM @ENABLE_SIMPLESTOT_ASM@
 
 // use the miracl library for curves
 #cmakedefine ENABLE_MIRACL @ENABLE_MIRACL@
