@@ -68,7 +68,7 @@ option(ENABLE_SIMPLESTOT_ASM    "simplest assembly library" OFF)
 option(ENABLE_CIRCUITS  "compile the circuit module" ON)
 option(ENABLE_NET_LOG   "compile with network logging" OFF)
 option(ENABLE_WOLFSSL   "conpiler with WolfSSL enabled" OFF)
-option(ENABLE_SSE       "compile with SSE instrctions" ON)
+option(ENABLE_SSE       "compile with SSE instrctions" OFF)
 option(ENABLE_BOOST     "compile with BOOST networing integration" OFF)
 option(FETCH_AUTO       "automaticly download and build dependancies" OFF)
 
